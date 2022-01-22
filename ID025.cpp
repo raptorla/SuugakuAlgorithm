@@ -7,16 +7,19 @@ using namespace std;
 int main() {
 	long long N;
 	cin >> N;
-	vector<long long> P(60);
-	vector<long long> Q(60);
+	vector<long long> A(200010);
+	vector<long long> B(200010);
+	double ans = 0.0;
 	
 	for(int i = 0; i < N; i++){
-		cin >> P[i] >> Q[i];	
+		cin >> A[i];	
+	}
+	for(int i = 0; i < N; i++){
+		cin >> B[i];	
 	}
 	
-	double ans = 0.0;
 	for(int i = 0; i < N; i++){
-		ans += 1.0 * Q[i] / P[i];
+		ans += 1.0 / 3.0 * A[i] + 2.0 / 3.0 * B[i];
 	}
 	
 	printf("%.12lf\n", ans);
